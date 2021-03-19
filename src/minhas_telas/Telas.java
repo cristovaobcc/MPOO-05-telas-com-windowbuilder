@@ -10,10 +10,13 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class Telas extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField txtNome;
 
 	/**
 	 * Launch the application.
@@ -44,19 +47,27 @@ public class Telas extends JFrame {
 		
 		JLabel lblNewLabel = new JLabel("Nome");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
+		
+		txtNome = new JTextField();
+		txtNome.setFont(new Font("Dialog", Font.PLAIN, 16));
+		txtNome.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(675, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 275, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(388, Short.MAX_VALUE))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(txtNome, Alignment.LEADING)
+						.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
 					.addContainerGap(505, Short.MAX_VALUE))
 		);
 		contentPane.setLayout(gl_contentPane);
