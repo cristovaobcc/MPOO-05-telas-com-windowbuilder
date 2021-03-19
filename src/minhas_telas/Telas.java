@@ -12,11 +12,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JFormattedTextField;
 
 public class Telas extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtNome;
+	private JLabel lblData;
+	private JFormattedTextField formattedTextFieldData;
 
 	/**
 	 * Launch the application.
@@ -51,6 +54,11 @@ public class Telas extends JFrame {
 		txtNome = new JTextField();
 		txtNome.setFont(new Font("Dialog", Font.PLAIN, 16));
 		txtNome.setColumns(10);
+		
+		lblData = new JLabel("Data:");
+		lblData.setFont(new Font("Dialog", Font.BOLD, 18));
+		
+		formattedTextFieldData = new JFormattedTextField();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -58,17 +66,28 @@ public class Telas extends JFrame {
 					.addContainerGap()
 					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 285, Short.MAX_VALUE)
-					.addGap(378))
+					.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(lblData, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(formattedTextFieldData, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
+					.addGap(134))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addComponent(txtNome, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-						.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-					.addGap(505))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+									.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+									.addComponent(lblData, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
+								.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
+							.addGap(505))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(formattedTextFieldData, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap(506, Short.MAX_VALUE))))
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
