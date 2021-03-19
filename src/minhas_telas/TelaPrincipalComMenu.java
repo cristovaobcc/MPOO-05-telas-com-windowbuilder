@@ -12,6 +12,8 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaPrincipalComMenu extends JFrame {
 
@@ -53,6 +55,15 @@ public class TelaPrincipalComMenu extends JFrame {
 		mnNewMenuCadastro.add(mnNewMenu_1);
 		
 		JMenuItem mntmMenuItemNovoFuncionario = new JMenuItem("Novo Funcionario");
+		mntmMenuItemNovoFuncionario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				DadosDoFuncionario dadosJanela = new DadosDoFuncionario();
+				dadosJanela.setVisible(true);
+				dadosJanela.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+				
+			}
+		});
 		mntmMenuItemNovoFuncionario.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));
 		mnNewMenu_1.add(mntmMenuItemNovoFuncionario);
 		
