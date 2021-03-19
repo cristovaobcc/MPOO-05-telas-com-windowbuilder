@@ -14,6 +14,7 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.border.TitledBorder;
 
 public class TelaComAbasEMenu extends JFrame {
 
@@ -82,6 +83,17 @@ public class TelaComAbasEMenu extends JFrame {
 		panelDadosPessoais.setLayout(gl_panelDadosPessoais);
 		
 		JPanel panelDadosEndereco = new JPanel();
+		panelDadosEndereco.setBorder(new TitledBorder(null, "Dados do endere\u00E7o do Funcion\u00E1rio", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		tabbedPane.addTab("Endereço", null, panelDadosEndereco, null);
+		GroupLayout gl_panelDadosEndereco = new GroupLayout(panelDadosEndereco);
+		gl_panelDadosEndereco.setHorizontalGroup(
+			gl_panelDadosEndereco.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 785, Short.MAX_VALUE)
+		);
+		gl_panelDadosEndereco.setVerticalGroup(
+			gl_panelDadosEndereco.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 533, Short.MAX_VALUE)
+		);
+		panelDadosEndereco.setLayout(gl_panelDadosEndereco);
 	}
 }
