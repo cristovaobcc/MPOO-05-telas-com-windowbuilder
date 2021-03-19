@@ -7,6 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class TelaComAbasEMenu extends JFrame {
 
@@ -43,8 +45,18 @@ public class TelaComAbasEMenu extends JFrame {
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
 		
-		JPanel panel = new JPanel();
-		tabbedPane.addTab("New tab", null, panel, null);
+		JPanel panelDadosPessoais = new JPanel();
+		tabbedPane.addTab("Dados Pessoais", null, panelDadosPessoais, null);
+		GroupLayout gl_panelDadosPessoais = new GroupLayout(panelDadosPessoais);
+		gl_panelDadosPessoais.setHorizontalGroup(
+			gl_panelDadosPessoais.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 785, Short.MAX_VALUE)
+		);
+		gl_panelDadosPessoais.setVerticalGroup(
+			gl_panelDadosPessoais.createParallelGroup(Alignment.LEADING)
+				.addGap(0, 533, Short.MAX_VALUE)
+		);
+		panelDadosPessoais.setLayout(gl_panelDadosPessoais);
 	}
 
 }
