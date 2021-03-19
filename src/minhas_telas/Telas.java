@@ -63,6 +63,7 @@ public class Telas extends JFrame {
 		lblData.setFont(new Font("Dialog", Font.BOLD, 18));
 		
 		formattedTextFieldData = new JFormattedTextField(new MaskFormatter("##/##/####"));
+		formattedTextFieldData.setFont(new Font("Dialog", Font.PLAIN, 16));
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
