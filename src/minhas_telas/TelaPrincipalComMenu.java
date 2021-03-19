@@ -9,6 +9,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.KeyStroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.InputEvent;
 
 public class TelaPrincipalComMenu extends JFrame {
 
@@ -50,7 +53,20 @@ public class TelaPrincipalComMenu extends JFrame {
 		mnNewMenuCadastro.add(mnNewMenu_1);
 		
 		JMenuItem mntmMenuItemNovoFuncionario = new JMenuItem("Novo Funcionario");
+		mntmMenuItemNovoFuncionario.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));
 		mnNewMenu_1.add(mntmMenuItemNovoFuncionario);
+		
+		JMenu mnGerente = new JMenu("Gerente");
+		mnGerente.setMnemonic('G');
+		mnNewMenuCadastro.add(mnGerente);
+		
+		JMenuItem mntmGerenteSupervisor = new JMenuItem("Novo Gerente Supervisor");
+		mntmGerenteSupervisor.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+		mnGerente.add(mntmGerenteSupervisor);
+		
+		JMenuItem mntmGerenteDiretor = new JMenuItem("Novo Gerente Diretor");
+		mntmGerenteDiretor.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, InputEvent.CTRL_MASK));
+		mnGerente.add(mntmGerenteDiretor);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
