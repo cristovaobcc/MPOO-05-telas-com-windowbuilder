@@ -23,6 +23,8 @@ public class Telas extends JFrame {
 	private JTextField txtNome;
 	private JLabel lblData;
 	private JFormattedTextField formattedTextFieldData;
+	private JLabel lblCpf;
+	private JFormattedTextField formattedTextFieldCPF;
 
 	/**
 	 * Launch the application.
@@ -64,19 +66,31 @@ public class Telas extends JFrame {
 		
 		formattedTextFieldData = new JFormattedTextField(new MaskFormatter("##/##/####"));
 		formattedTextFieldData.setFont(new Font("Dialog", Font.PLAIN, 16));
+		
+		lblCpf = new JLabel("CPF:");
+		lblCpf.setFont(new Font("Dialog", Font.BOLD, 18));
+		
+		formattedTextFieldCPF = new JFormattedTextField();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(lblCpf, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(lblNewLabel, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(lblData, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(formattedTextFieldData, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
-					.addGap(134))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(lblData, GroupLayout.PREFERRED_SIZE, 73, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(formattedTextFieldData, GroupLayout.PREFERRED_SIZE, 143, GroupLayout.PREFERRED_SIZE)
+							.addGap(134))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(formattedTextFieldCPF, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -89,7 +103,11 @@ public class Telas extends JFrame {
 									.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
 									.addComponent(lblData, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE))
 								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))
-							.addGap(505))
+							.addGap(18)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblCpf, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+								.addComponent(formattedTextFieldCPF, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
+							.addGap(444))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addComponent(formattedTextFieldData, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
 							.addContainerGap(506, Short.MAX_VALUE))))
