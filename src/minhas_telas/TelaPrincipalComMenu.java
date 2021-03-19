@@ -72,6 +72,14 @@ public class TelaPrincipalComMenu extends JFrame {
 		mnNewMenuCadastro.add(mnGerente);
 		
 		JMenuItem mntmGerenteSupervisor = new JMenuItem("Novo Gerente Supervisor");
+		mntmGerenteSupervisor.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				DadosDoGerente dadosJanela = new DadosDoGerente();
+				dadosJanela.setVisible(true);
+				dadosJanela.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+			}
+		});
 		mntmGerenteSupervisor.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mnGerente.add(mntmGerenteSupervisor);
 		
