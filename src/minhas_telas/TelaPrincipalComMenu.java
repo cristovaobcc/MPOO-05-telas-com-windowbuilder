@@ -15,6 +15,7 @@ import java.awt.event.InputEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+@SuppressWarnings("serial")
 public class TelaPrincipalComMenu extends JFrame {
 
 	private JPanel contentPane;
