@@ -9,10 +9,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TelaComAbasEMenu extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textFieldNome;
 
 	/**
 	 * Launch the application.
@@ -47,16 +53,32 @@ public class TelaComAbasEMenu extends JFrame {
 		
 		JPanel panelDadosPessoais = new JPanel();
 		tabbedPane.addTab("Dados Pessoais", null, panelDadosPessoais, null);
+		
+		JLabel lblNome = new JLabel("Nome:");
+		lblNome.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNome.setFont(new Font("Dialog", Font.BOLD, 16));
+		
+		textFieldNome = new JTextField();
+		textFieldNome.setColumns(10);
 		GroupLayout gl_panelDadosPessoais = new GroupLayout(panelDadosPessoais);
 		gl_panelDadosPessoais.setHorizontalGroup(
 			gl_panelDadosPessoais.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 785, Short.MAX_VALUE)
+				.addGroup(gl_panelDadosPessoais.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNome, GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textFieldNome, GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+					.addGap(415))
 		);
 		gl_panelDadosPessoais.setVerticalGroup(
 			gl_panelDadosPessoais.createParallelGroup(Alignment.LEADING)
-				.addGap(0, 533, Short.MAX_VALUE)
+				.addGroup(gl_panelDadosPessoais.createSequentialGroup()
+					.addGap(21)
+					.addGroup(gl_panelDadosPessoais.createParallelGroup(Alignment.TRAILING, false)
+						.addComponent(textFieldNome, Alignment.LEADING)
+						.addComponent(lblNome, Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 31, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(481, Short.MAX_VALUE))
 		);
 		panelDadosPessoais.setLayout(gl_panelDadosPessoais);
 	}
-
 }
