@@ -58,8 +58,8 @@ public class Telas extends JFrame {
 					.addContainerGap()
 					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(txtNome, GroupLayout.PREFERRED_SIZE, 275, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(388, Short.MAX_VALUE))
+					.addComponent(txtNome, GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+					.addGap(378))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
