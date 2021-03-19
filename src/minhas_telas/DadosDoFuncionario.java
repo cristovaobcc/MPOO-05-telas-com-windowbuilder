@@ -16,7 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.TitledBorder;
 
-public class TelaComAbasEMenu extends JFrame {
+public class DadosDoFuncionario extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldNome;
@@ -28,7 +28,7 @@ public class TelaComAbasEMenu extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaComAbasEMenu frame = new TelaComAbasEMenu();
+					DadosDoFuncionario frame = new DadosDoFuncionario();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,8 +40,8 @@ public class TelaComAbasEMenu extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TelaComAbasEMenu() {
-		setTitle("Tela Principal");
+	public DadosDoFuncionario() {
+		setTitle("Dados do Funcionário");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
