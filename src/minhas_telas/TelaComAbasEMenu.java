@@ -32,6 +32,7 @@ public class TelaComAbasEMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public TelaComAbasEMenu() {
+		setTitle("Tela Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
 		contentPane = new JPanel();
@@ -41,6 +42,9 @@ public class TelaComAbasEMenu extends JFrame {
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		contentPane.add(tabbedPane, BorderLayout.CENTER);
+		
+		JPanel panel = new JPanel();
+		tabbedPane.addTab("New tab", null, panel, null);
 	}
 
 }
