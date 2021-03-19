@@ -80,5 +80,8 @@ public class TelaComAbasEMenu extends JFrame {
 					.addContainerGap(481, Short.MAX_VALUE))
 		);
 		panelDadosPessoais.setLayout(gl_panelDadosPessoais);
+		
+		JPanel panelDadosEndereco = new JPanel();
+		tabbedPane.addTab("Endereço", null, panelDadosEndereco, null);
 	}
 }
